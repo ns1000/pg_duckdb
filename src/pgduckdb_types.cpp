@@ -590,6 +590,8 @@ GetPostgresDuckDBType(duckdb::LogicalType type) {
 		return DATEOID;
 	case duckdb::LogicalTypeId::TIMESTAMP:
 		return TIMESTAMPOID;
+	case duckdb::LogicalTypeId::TIMESTAMP_TZ:  // Add this case for TIMESTAMP WITH TIME ZONE
+        return TIMESTAMPOID;
 	case duckdb::LogicalTypeId::FLOAT:
 		return FLOAT4OID;
 	case duckdb::LogicalTypeId::DOUBLE:
