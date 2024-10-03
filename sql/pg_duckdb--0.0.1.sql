@@ -105,6 +105,14 @@ BEGIN
 END;
 $func$;
 
+CREATE OR REPLACE FUNCTION delta_scan(path text)
+RETURNS SETOF record LANGUAGE 'plpgsql' AS
+$func$
+BEGIN
+    RAISE EXCEPTION 'Function `delta_scan(TEXT)` only works with Duckdb execution.';
+END;
+$func$;
+
 CREATE SCHEMA duckdb;
 SET search_path TO duckdb;
 
