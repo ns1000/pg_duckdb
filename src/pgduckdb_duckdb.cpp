@@ -75,6 +75,7 @@ DuckDBManager::DuckDBManager() {
 
 	duckdb::DBConfig config;
 	config.SetOptionByName("extension_directory", GetExtensionDirectory());
+	config.SetOptionByName("autoload_known_extensions", true);
 	// Transforms VIEWs into their view definition
 	config.replacement_scans.emplace_back(pgduckdb::PostgresReplacementScan);
 
